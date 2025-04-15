@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/front-end/style.css">
+    <title>Ficha de Anamnese</title>
+</head>
+
+<body>
+    <header> 
+        <nav>
+            <div id="nav-container">
+              <img id="logo" src="./assets/tie-logo.png" alt="Logo Take It Easy" />
+          
+              <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
+                ☰
+              </button>
+          
+              <ul id="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#equipe">Equipe</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#duvidas">Dúvidas</a></li>
+                <li><a href="#contato">Contato</a></li>
+              </ul>
+            </div>
+          </nav>
+    
+    </header>
+
+    <main class="form-container">
+    <form class="anamnese" id="anamnese" action="#">
+        <h1>Ficha de Anamnese</h1><br>
+    <div class="session-data">
+    <label for="artistName">Artista:<span class="required">*</span></label>
+    <select name="artistName" id="artistName" required>
+        <option value="" disabled selected>Selecione</option>
+        <option value="Bea" name="artistName">Bea</option>
+        <option value="Melissa" name="artistName">Melissa</option>
+        <option value="Isa" name="artistName">Isa</option>
+        <option value="Thai"name="artistName">Thaine</option>
+        <option value="Karol" name="artistName">Karou</option>
+        <option value="Giulia" name="artistName">Giulia</option>
+        <option value="Amanda" name="artistName">Amanda</option>
+        <option value="Pedro" name="artistName">Pedro</option>
+        <option value="Heloisa" name="artistName">Heloisa</option>
+        <option value="Felipe" name="artistName">Felipe</option>
+    </select>
+    <label for="price" required>Valor da sessão:<span class="required">*</span></label>
+    <input type="number" id="price" name="price">
+    <label for="sessionDate" required>Data da sessão:<span class="required">*</span></label>
+    <input type="date" name="sessionDate" id="sessionDate" required>
+    
+    </div>
+    
+    <div class="client-data">
+        <h3>Dados Pessoais:</h3>
+
+        <label for="clientName">Nome completo:<span class="required">*</span></label>
+        <input type="text" id="clientName" name="clientName" required>
+        
+        Gênero:
+        <input type="radio" id="genderFemale" name="gender" value="Feminino">
+        <label for="genderFemale">Feminino</label>
+        <input type="radio" id="genderMale" name="gender" value="Masculino">
+        <label for="genderMale">Masculino</label>
+        <input type="radio" id="genderOther" name="gender" value="Outro">
+        <label for="genderOther">Outro</label><br>
+        
+        <label for="birthDate">Data de nascimento:<span class="required">*</span></label>
+        <input type="date" id="birthDate" name="birthDate" required>
+        <label for="clientDocument">CPF:<span class="required">*</span></label>
+        <input type="text" id="clientDocument" name="clientDocument" required><br>
+        <label for="city">Cidade:</label>
+        <input type="text" id="city" name="city">
+        <label for="state">UF:</label>
+        <input type="text" id="state" name="state">
+        <label for="clientPhone">Telefone:<span class="required">*</span></label>
+        <input type="number" id="clientPhone" name="clientPhone" required>
+        <label for="clientEmail">E-mail:</label>
+        <input type="text" id="clientEmail" name="clientEmail" required><br>
+
+    <div class="client-health-data">
+
+        <h3>Informações de saúde:</h3>
+
+        <label for="healthProblems1">Possui algum problema de saúde? Se sim, qual?</label><br>
+        <input type="radio" id="healthProblems1Yes" name="healthProblems1" value="Sim">
+        <label for="healthProblems1Yes">Sim</label>
+        <input type="radio" id="healthProblems1No" name="healthProblems1" value="Não">
+        <label for="healthProblems1No">Não</label>
+        <input type="text" id="healthProblems1Text" name="healthProblems1Text"><br>
+        
+        <label for="meds">Faz uso de medicamentos contínuos? Quais?</label><br>
+        <input type="radio" id="medsYes" name="meds" value="Sim">
+        <label for="medsYes">Sim</label>
+        <input type="radio" id="medsNo" name="meds" value="Não">
+        <label for="medsNo">Não</label>
+        <input type="text" id="medsText" name="medsText"><br>
+        
+        <label for="allergies">Possui alergia a algum medicamento ou substância? Quais?</label><br>
+        <input type="radio" id="allergiesYes" name="allergies" value="Sim">
+        <label for="allergiesYes">Sim</label>  
+        <input type="radio" id="allergiesNo" name="allergies" value="Não">
+        <label for="allergiesNo">Não</label>
+        <input type="text" id="allergiesText" name="allergiesText"><br>
+        
+        <label for="healthProblems2">Possui diabetes, hemofilia, epilepsia ou doenças cardiovasculares?</label><br>
+        <input type="radio" id="healthProblems2Yes" name="healthProblems2" value="Sim">
+        <label for="healthProblems2Yes">Sim</label>
+        <input type="radio" id="healthProblems2No" name="healthProblems2" value="Não">
+        <label for="healthProblems2No">Não</label><br>
+        
+        <label for="keloid">Tem tendência a quelóides ou cicatrização anormal?</label><br>
+        <input type="radio" id="keloidYes" name="keloid" value="Sim">
+        <label for="keloidYes">Sim</label>
+        <input type="radio" id="keloidNo" name="keloid" value="Não">
+        <label for="keloidNo">Não</label><br>
+        
+        <label for="alcohol">Ingeriu bebidas alcoólicas ou substâncias ilícitas nas últimas 24 horas?</label><br>
+        <input type="radio" id="alcoholYes" name="alcohol" value="Sim">
+        <label for="alcoholYes">Sim</label>
+        <input type="radio" id="alcoholNo" name="alcohol" value="Não">
+        <label for="alcoholNo">Não</label><br>
+        
+        <label for="antibiotics">Fez uso de antibióticos ou anti-inflamatórios recentemente?</label><br>
+        <input type="radio" id="antibioticsYes" name="antibiotics" value="Sim">
+        <label for="antibioticsYes">Sim</label>
+        <input type="radio" id="antibioticsNo" name="antibiotics" value="Não">
+        <label for="antibioticsNo">Não</label><br>
+        
+        <label for="previousTattoos">Já realizou alguma tatuagem anteriormente? Teve alguma reação adversa?</label><br>
+        <input type="radio" id="previousTattoosYes" name="previousTattoos" value="Sim">
+        <label for="previousTattoosYes">Sim</label>
+        <input type="radio" id="previousTattoosNo" name="previousTattoos" value="Não">
+        <label for="previousTattoosNo">Não</label>
+        <input type="text" id="previousTattoosText" name="previousTattoosText"><br>
+
+    </div>
+
+    <div class="terms-and-conditions">
+        <h3>Termos e condições:</h3>
+        <p>
+            Declaro que as informações acima são verdadeiras e me responsabilizo pela veracidade delas. 
+            Estou ciente de que a tatuagem é um procedimento permanente e que os cuidados pós-procedimento são fundamentais para a cicatrização adequada.
+            Autorizo o tatuador a realizar o procedimento e confirmo que fui devidamente orientado(a) sobre o processo, riscos envolvidos e cuidados necessários. 
+            Isento o profissional e o estúdio de quaisquer responsabilidades decorrentes de informações falsas ou omissões sobre minha saúde.
+        </p><br>
+    </div>
+
+
+    <div class="client-signature">
+        <h3>Assinatura:<span class="required">*</span></h3>
+        <canvas id="signature-canvas" name="signature"> </canvas>
+    </div>
+    <button class="signature-button" onclick="clearSignature()">Limpar assinatura</button>
+    
+    
+    
+    <div class="submit-button">
+        <input type="submit" value="enviar">
+    </div>
+    </form>
+
+</main>
+
+<footer>
+    <p class="signature">Feito com carinho por Isabela Silva ♡, 2025. </p>
+</footer>
+
+<script src="/front-end/script.js"></script>
+</body>
+</html>
