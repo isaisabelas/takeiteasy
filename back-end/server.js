@@ -1,204 +1,110 @@
 const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const db = require('./database');
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('./anamnese.db'); // Create a new SQLite database or open an existing one
+const cors = require('cors'); 
+const bodyParser = require('body-parser'); // Middleware to parse JSON bodies
 
-const app = express();
-const port = 3000;
 
-// middleware
-app.use(cors());
+const app = express(); // Create an Express application 
+const PORT = 3000; // Define the port for the server to listen on
+
+// Middleware
+app.use(cors()); // Enable CORS for all routes (Cross-Origin Resource Sharing)
 app.use(bodyParser.json());
 
-// CREATE 
-app.post('/anamnese', (req, res) => {
+app.use((req, res, next) => { // Middleware to set CORS headers
+    res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5501'); // Allow requests from this origin
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE"); // Allow these HTTP methods
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'); 
+    next();
+});
+
+
+app.post('/anamnese', (req, res) => { // Endpoint to handle POST requests to save data | req: request, res: response
     const {
         artistName,
         price,
         sessionDate,
         clientName,
         gender,
-        age,
+        birthDate,
         clientDocument,
         city,
         state,
         clientPhone,
         clientEmail,
         healthProblems1,
+        healthProblems1Text,
         meds,
+        medsText,
         allergies,
+        allergiesText,
         healthProblems2,
-        keloid,
-        alcohol,
-        antibiotics,
-        previousTattoos
-    } = req.body;
-
-    console.log('Received data:', req.body); // Log received data
-
-    const sql = `INSERT INTO anamnese (
-        artista,
-        valor_da_sessao,
-        data_da_sessao,
-        nome_cliente,
-        genero,
-        idade,
-        CPF,
-        cidade,
-        uf,
-        telefone,
-        email,
-        problema_saude,
-        medicacao,
-        alergia,
-        doenca,
-        queloide,
-        alcool_ultimas_24h,
-        antibioticos_recentes,
-        tatuagens_anteriores,
-        data_sessao
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
-    
-    db.run(sql, [
-        artistName,
-        price,
-        sessionDate,
-        clientName,
-        gender,
-        age,
-        clientDocument,
-        city,
-        state,
-        clientPhone,
-        clientEmail,
-        healthProblems1,
-        meds,
-        allergies,
-        healthProblems2,
+        healthProblems2Text,
         keloid,
         alcohol,
         antibiotics,
         previousTattoos,
-        sessionDate
-    ], (err) => {
-        if (err) {
-            console.error('Database error:', err.message); // Log database error
-            return res.status(500).json({ error: 'An internal server error occurred.' });
-        }
-        res.json({ success: true, message: 'Form data received.' });
-    });
-});
-
-// READ
-app.get('/anamnese/:id', (req, res) => {
-    const { id } = req.params;
-    const sql = `SELECT * FROM anamnese WHERE id = ?`;
-    db.get(sql, [id], (err, row) => {
-        if (err) {
-            console.error('Database error:', err.message); // Log database error
-            return res.status(500).json({ error: 'An internal server error occurred.' });
-        }
-        res.json(row || { error: 'Form data not found.' });
-    });
-});
-
-// UPDATE: update data by id
-app.put('/anamnese/:id', (req, res) => {
-    const { id } = req.params;
-    const {
-        artistName,
-        price,
-        sessionDate,
-        clientName,
-        gender,
-        age,
-        clientDocument,
-        city,
-        state,
-        clientPhone,
-        clientEmail,
-        healthProblems1,
-        meds,
-        allergies,
-        healthProblems2,
-        keloid,
-        alcohol,
-        antibiotics,
-        previousTattoos
+        terms,
     } = req.body;
 
-    console.log('Updating data for ID:', id); // Log ID being updated
-    console.log('Received data:', req.body); // Log received data
+    // SQL Query to insert data into the anamnese table
+    const sql = `
+        INSERT INTO anamnese (
+            artistName,
+            price,
+            sessionDate,
+            clientName,
+            gender,
+            birthDate,
+            clientDocument,
+            city,
+            state,
+            clientPhone,
+            clientEmail,
+            healthProblems1,
+            healthProblems1Text,
+            meds,
+            medsText,
+            allergies,
+            allergiesText,
+            healthProblems2,
+            healthProblems2Text,
+            keloid,
+            alcohol,
+            antibiotics,
+            previousTattoos,
+            terms
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
 
-    const sql = `UPDATE anamnese SET
-        artista = ?,
-        valor_da_sessao = ?,
-        data_da_sessao = ?,
-        nome_cliente = ?,
-        genero = ?,
-        idade = ?,
-        CPF = ?,
-        cidade = ?,
-        uf = ?,
-        telefone = ?,
-        email = ?,
-        problema_saude = ?,
-        medicacao = ?,
-        alergia = ?,
-        doenca = ?,
-        queloide = ?,
-        alcool_ultimas_24h = ?,
-        antibioticos_recentes = ?,
-        tatuagens_anteriores = ?,
-        data_sessao = ?
-        WHERE id = ?`;
-    db.run(sql, [
-        artistName,
-        price,
-        sessionDate,
-        clientName,
-        gender,
-        age,
-        clientDocument,
-        city,
-        state,
-        clientPhone,
-        clientEmail,
-        healthProblems1,
-        meds,
-        allergies,
-        healthProblems2,
-        keloid,
-        alcohol,
-        antibiotics,
-        previousTattoos,
-        sessionDate,
-        id
-    ], function(err) {
+    // Parameters to be inserted into the SQL query
+    // The question marks (?) in the SQL query are placeholders for the values in the params array
+    // The values in the params array will be inserted into the SQL query in the order they appear
+    // Prevents SQL injection attacks by ensuring that the values are properly escaped
+    const params = [
+        artistName, price, sessionDate, clientName, gender, birthDate,
+        clientDocument, city, state, clientPhone, clientEmail,
+        healthProblems1, healthProblems1Text, meds, medsText,
+        allergies, allergiesText, healthProblems2, healthProblems2Text,
+        keloid, alcohol, antibiotics, previousTattoos, terms
+    ];
+
+    // Execute the SQL query with the parameters
+    db.run(sql, params, function(err) {
         if (err) {
-            console.error('Database error:', err.message); // Log database error
-            return res.status(500).json({ error: 'An internal server error occurred.' });
+            console.error(err);
+            return res.status(500).json({ success: false, error: err.message });
         }
-        res.json({ success: true, message: 'Form data updated.', changes: this.changes });
+        res.json({ 
+            success: true, 
+            message: 'Dados salvos com sucesso!',
+            id: this.lastID 
+        });
     });
 });
 
-// DELETE: delete data by id
-app.delete('/anamnese/:id', (req, res) => {
-    const { id } = req.params;
-    console.log('Deleting data for ID:', id); // Log ID being deleted
-    const sql = `DELETE FROM anamnese WHERE id = ?`;
-    db.run(sql, [id], function(err) {
-        if (err) {
-            console.error('Database error:', err.message); // Log database error
-            return res.status(500).json({ error: 'An internal server error occurred.' });
-        }
-        res.json({ success: true, message: 'Form data deleted.', changes: this.changes });
-    });
-});
-
-// start server
-const PORT = 3000;
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+// Endpoint to handle GET requests to retrieve all data from the anamnese table
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
 });

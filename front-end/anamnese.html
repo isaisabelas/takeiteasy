@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="/front-end/style.css">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/front-end/styles/style.css">
     <title>Ficha de Anamnese</title>
 </head>
 
 <body>
     <header> 
         <nav>
-            <div id="nav-container">
-              <img id="logo" src="./assets/tie-logo.png" alt="Logo Take It Easy" />
-          
-              <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu">
-                ☰
-              </button>
-          
-              <ul id="nav-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#equipe">Equipe</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#duvidas">Dúvidas</a></li>
-                <li><a href="#contato">Contato</a></li>
-              </ul>
-            </div>
-          </nav>
-    
-    </header>
+          <div class="nav-container">
+            <img id="logo" src="./assets/tie-logo.png" alt="Logo Take It Easy" />
+      
+            <button class="hamburger" aria-label="Abrir menu">
+              ☰
+            </button>
+      
+            <ul class="nav-links">
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#equipe">Equipe</a></li>
+              <li><a href="#galeria">Galeria</a></li>
+              <li><a href="#duvidas">Dúvidas</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
 
     <main class="form-container">
     <form class="anamnese" id="anamnese" action="#">
@@ -147,20 +147,17 @@
             Estou ciente de que a tatuagem é um procedimento permanente e que os cuidados pós-procedimento são fundamentais para a cicatrização adequada.
             Autorizo o tatuador a realizar o procedimento e confirmo que fui devidamente orientado(a) sobre o processo, riscos envolvidos e cuidados necessários. 
             Isento o profissional e o estúdio de quaisquer responsabilidades decorrentes de informações falsas ou omissões sobre minha saúde.
+            Autorizo o uso de imagens do meu corpo para fins de portfólio e divulgação, respeitando minha privacidade e identidade.
+            Estou ciente de que a tatuagem pode causar dor e desconforto, e que os resultados podem variar de acordo com o meu tipo de pele e cuidados pós-procedimento.
+
         </p><br>
+
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">Li e concordo com os termos e condições acima. <span class="required">*</span></label><br>
     </div>
 
-
-    <div class="client-signature">
-        <h3>Assinatura:<span class="required">*</span></h3>
-        <canvas id="signature-canvas" name="signature"> </canvas>
-    </div>
-    <button class="signature-button" onclick="clearSignature()">Limpar assinatura</button>
-    
-    
-    
     <div class="submit-button">
-        <input type="submit" value="enviar">
+        <input type="submit" value="enviar" id="enviar" name="enviar">
     </div>
     </form>
 
