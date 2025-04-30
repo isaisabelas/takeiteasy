@@ -25,4 +25,11 @@
       margin: 1rem 0;
       text-align: center;
     }
+
+    .gallery-container img{
+      width: 10rem;
+      height: auto;
+      
+    }
+
   }
