@@ -1,30 +1,14 @@
-// Handles dropdown information 
-
-function toggleDropdown(element) {
-    const content = element.nextElementSibling;
-    const arrow = element.querySelector(".arrow");
-
-    if (content.style.display === "block") {
-        content.style.display = "none";
-        element.classList.remove("open");
-    } else {
-        content.style.display = "block";
-        element.classList.add("open");
-    }
-}
-
-
-// Handles the form submission
-// and sends the data to the server using fetch API
 document.getElementById("anamnese").addEventListener("submit", async function(event) {
     event.preventDefault();
     console.log("Formulário foi submetido");
 
     const formData = Object.fromEntries(new FormData(event.target).entries());
 
-    
-    try { // Sending the data to the server
-        const response = await fetch('http://localhost:3000/anamnese', {
+    // Use a URL baseada no ambiente (se estiver no Render, usará o domínio correto)
+    const apiUrl = window.location.origin + '/anamnese';
+
+    try { // Enviando os dados para o servidor
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,16 +20,16 @@ document.getElementById("anamnese").addEventListener("submit", async function(ev
             throw new Error(`Erro HTTP: ${response.status}`);
         }
 
-        // Verifying if the response is JSON
-        const text = await response.text(); // Read the response as text first
+        // Verificando se a resposta é JSON
+        const text = await response.text(); // Lê a resposta como texto
         let resultado;
         try {
-            resultado = JSON.parse(text); // Try to parse the text as JSON
+            resultado = JSON.parse(text); // Tenta parsear o texto como JSON
         } catch (jsonError) {
             throw new Error('Resposta não é JSON');
         }
 
-        // Check if the response contains the expected properties
+        // Verifica se a resposta contém as propriedades esperadas
         if (resultado.success) {
             alert(resultado.message || 'Formulário enviado com sucesso!');
         } else {
