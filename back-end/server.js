@@ -30,7 +30,6 @@ app.post('/anamnese', async (req, res) => {
         gender,
         birthDate,
         clientDocument,
-        city,
         state,
         clientPhone,
         clientEmail,
