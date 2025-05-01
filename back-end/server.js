@@ -2,25 +2,28 @@ const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// PostgreSQL config
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 });
 
-const app = express();
-const PORT = 3000;
-
-app.use(cors());
+// Middleware
+app.use(cors()); // Permite chamadas de qualquer origem
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '../front-end'))); // Serve arquivos estáticos (HTML, CSS, JS)
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5501');
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
+// Serve o index.html como página principal
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../front-end/index.html'));
 });
 
+// Rota para envio da ficha
 app.post('/anamnese', async (req, res) => {
     const {
         artistName,
@@ -30,6 +33,7 @@ app.post('/anamnese', async (req, res) => {
         gender,
         birthDate,
         clientDocument,
+        city,            // Adicionado: estava faltando
         state,
         clientPhone,
         clientEmail,
@@ -86,6 +90,7 @@ app.post('/anamnese', async (req, res) => {
     }
 });
 
+// Inicializa o servidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
