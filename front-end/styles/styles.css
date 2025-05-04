@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #fff0f6;
+  color: #333;
+}
+
+
+header {
+  background: #602e6d;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+header a {
+  box-shadow: inset 0 0 0 0 #54b3d6;
+  color: #54b3d6;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+header a:hover {
+  color: #fff;
+  box-shadow: inset 200px 0 0 0 #54b3d6;;
+}
+
+.logo {
+  max-width: 30%;
+  margin: 0 auto;
+}
+.logo-img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;  =
+  gap: 1.5rem;
+}
+
+
+
+section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.card a {
+  text-decoration: none;
+  color:#602e6d;
+  font-weight: bold;  
+  box-shadow: inset 0 0 0 0 #54b3d6;
+  padding: 0 .25rem;
+  margin: 0 -.25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.card a:hover {
+  color: #fff;
+  box-shadow: inset 200px 0 0 0 #54b3d6;;
+}
+
+#sobre{
+  color: white;
+  height: 20rem;
+  background-image: url('../assets/tie-capa.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #571942d8;
+  background-blend-mode: lighten;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#galeria{
+  width: 100%;
+  display: grid;
+  background-color: #78d1f1;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+#galeria img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+details {
+  background: #fff;
+  margin: 1rem auto;
+  max-width: 600px;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #602e6d;
+  cursor: pointer;
+}
+
+summary {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  background: #602e6d;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Ícone do Instagram fixo no canto */
+.instagram-icon {
+  position: fixed;
+  bottom: 9px;
+  right: 20px;
+  background-color: #602e6d;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.instagram-icon:hover {
+  background-color: #3a1b42;
+}
+
+.instagram-icon i {
+  pointer-events: none; /* Evita que o ícone interfira no clique */
+}
+
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.anamnese {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  line-height: 2rem;
+
+}
+
+.anamnese label {
+  margin-right: 0.5rem;
+}
+
+.anamnese input {
+  flex: 1;
+}
+
+.input-state {
+  max-width: 60px;
+}
+
+.required {
+  color: red;
+  font-weight: bold;
+}
+
+#enviar {
+  margin-top: 1rem;
+  background-color: #602e6d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+  }
+
+  #sobre {
+    padding: 1rem;
+    height: auto;
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #galeria {
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+  }
+
+  iframe {
+    width: 100% !important;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* mostra hamburger e esconde nav horizontal */
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+  }
+}

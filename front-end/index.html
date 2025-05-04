@@ -1,197 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <title>Take It Easy Tattoo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Take It Easy Tattoo</title>
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header"> 
-        <nav class="navbar">
-            <a href="#" class="logo"><img src="./assets/tie-logo.png" alt="" class="logo-img"></a>
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <ul class="menu">
-              <li><a href="#sobre">Sobre Nós</a></li>
-              <li><a href="#equipe">Equipe</a></li>
-              <li><a href="#galeria">Galeria</a></li>
-              <li><a href="#duvidas">Dúvidas</a></li>
-            </ul>
-        </nav>
-        </header>
 
-    <main>
-        <section id="sobre"> 
-            <div class="sobre-texto"><h1 class="title">Sobre nós</h1>
-                <p>O <strong>Take It Easy</strong>  nasceu da vontade de criar um estúdio de tatuagem onde a prioridade fosse trabalhar e criar em paz, sem competição ou pressões. Aqui, dividimos os custos e responsabilidades como uma casa compartilhada, valorizando a liberdade, o respeito e a tranquilidade. Ao longo desses dois anos, reunimos pessoas que compartilham desses mesmos valores: artistas autorais, mulheres, pessoas LGBTQIAPN+ e todos que procuram um espaço seguro, confortável e leve. </p>
-            </div>
-        </section>
+  <header>
+    <div class="logo">
+      <img src="../front-end/assets/tie-logo.png" alt="Logo Take It Easy Tattoo" class="logo-img">
+    </div>
 
-        <section id="equipe">
-            <h1>Conheça nossa equipe</h1>
-        <div class="flex-container">
-            <div id="artists-container">
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+      <nav id="nav-links">
+      <a href="#sobre">Sobre Nós</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+  </header>
 
-                <a href="https://www.instagram.com/tattoo.bea" class="container-link" title="Clique para ver mais">
-                <div class="person-container">
-                    <img src="./assets/artist-photos/bea.jpg" alt="Foto do artista">
-                    <h3>Bea</h3>
-                    <p>Geek, full color, old school, cobertura, reformas.</p>
-                </a>
-                </div>
-                <a href="https://www.instagram.com/melissagarciatattoo/" class="container-link" title="Clique para ver mais">
-                <div class="person-container">
-                    <img src="./assets/artist-photos/melissa.jpg" alt="Foto do artista">
-                    <h3>Melissa</h3>
-                    <p>Neotrad, blackwork, <br> oldschool, ornamental. </p>
-                </a>
-                </div>
-                <a href="https://www.instagram.com/heyheloisa/" class="container-link" title="Clique para ver mais">
-                <div class="person-container">
-                    <img src="/front-end/assets/artist-photos/helo.jpg" alt="Foto do artista">
-                    <h3>Heloisa</h3>
-                    <p>Woodcut, linework, <br> botânico, ornamental. </p>
-                </a>
-                </div>
-                <a href="https://www.instagram.com/isaisabelasz/" title="Clique para ver mais" class="container-link">
-                    <div class="person-container">
-                        <img src="./assets/artist-photos/isa.png" alt="Foto do artista">
-                        <h3>Isa</h3>
-                        <p>Autoral, fine line, <br> coloridas, cultura pop.</p>
-                </a>
-                </div>
-                <a href="https://www.instagram.com/felipelancastre/" class="container-link" title="Clique para ver mais">
-                <div class="person-container">
-                    <img src="./assets/artist-photos/felipe.png" alt="Foto do artista">
-                    <h3>Felipe</h3>
-                    <p>Autoral, backwork, <br> surrealismo, fineline.</p>
-                </a>
-                </div>
-                <a href="https://www.instagram.com/amandaredel/" class="container-link" title="Clique para ver mais">
-                <div class="person-container">
-                    <img src="./assets/artist-photos/amanda.jpg" alt="Foto do artista">
-                    <h3>Amanda</h3>
-                    <p>Trad autoral, fineline, <br> full color, preto&cinza.</p>
-                </a>
-                </div>
-                <a href="https://www.instagram.com/ordonhop/" class="container-link" title="Clique para ver mais">
-                <div class="person-container">
-                    <img src="./assets/artist-photos/pedro.png" alt="Foto do artista">
-                    <h3>Pedro</h3>
-                    <p>Hachura, fineline, linework.</p>
-                </a>
-                </div>
-                <a href="https://www.instagram.com/gsm.tattoo_/" class="container-link" title="Clique para ver mais">
-                <div class="person-container">
-                    <img src="./assets/artist-photos/giu.png" alt="Foto do artista">
-                    <h3>Giuilia</h3>
-                    <p>Old school, comercial.</p>
-                </a>
-                </div>
-                <a href="https://www.instagram.com/thaine_s/" class="container-link" title="Clique para ver mais">
-                <div class="person-container">
-                    <img src="./assets/artist-photos/thaine.jpg" alt="Foto do artista">
-                    <h3>Thaine</h3>
-                    <p>Kpop, full color, finelne.</p>
-                </a>
-                </div>
-                <a href="https://www.instagram.com/greenkarou/" class="container-link" title="Clique para ver mais">
-                <div class="person-container">
-                    <img src="./assets/artist-photos/karou.png" alt="Foto do artista">
-                    <h3>Karol</h3>
-                    <p>Ornamental, linework, suminagashi, fineline.</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-        </section>
+  <section id="sobre">
+    <div class="description">
+    <h2>Sobre Nós</h2>
+    <p>O <strong>Take It Easy</strong>  nasceu da vontade de criar um estúdio de tatuagem onde a prioridade fosse trabalhar e criar em paz, sem competição ou pressões. Aqui, dividimos os custos e responsabilidades como uma casa compartilhada, valorizando a liberdade, o respeito e a tranquilidade. Ao longo desses dois anos, reunimos pessoas que compartilham desses mesmos valores: artistas autorais, mulheres, pessoas LGBTQIAPN+ e todos que procuram um espaço seguro, confortável e leve. </p>
+    </div>
+  </section>
 
+  <section id="equipe">
+    <h2>Nossa Equipe</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="./assets/artist-photos/bea.jpg" alt="Foto do artista">
+        <h3>Bea</h3>
+        <p>Geek, full color, old school, cobertura, reformas.</p>
+        <a href="https://www.instagram.com/tattoo.bea">Ver mais</a>
+      </div>
+      <div class="card">
+        <img src="./assets/artist-photos/melissa.jpg" alt="Foto do artista">
+        <h3>Melissa</h3>
+        <p>Neotrad, blackwork, <br> oldschool, ornamental. </p>
+        <a href="https://www.instagram.com/melissagarciatattoo/">Ver mais</a>
+      </div>
+      <div class="card">
+        <img src="./assets/artist-photos/helo.jpg" alt="Foto do artista">
+        <h3>Heloisa</h3>
+        <p>Woodcut, linework, <br> botânico, ornamental. </p>
+        <a href="https://www.instagram.com/heyheloisa/">Ver mais</a>
+      </div>
+      <div class="card">
+        <img src="./assets/artist-photos/isa.png" alt="Foto do artista">
+        <h3>Isa</h3>
+        <p>Autoral, fine line, <br> coloridas, cultura pop.</p>
+        <a href="https://www.instagram.com/isaisabelasz/">Ver mais</a>
+      </div>
+      <div class="card">
+        <img src="./assets/artist-photos/felipe.png" alt="Foto do artista">
+        <h3>Felipe</h3>
+        <p>Autoral, backwork, <br> surrealismo, fineline.</p>
+        <a href="https://www.instagram.com/felipelancastre/">Ver mais</a>
+      </div>
+      <div class="card">
+        <img src="./assets/artist-photos/amanda.jpg" alt="Foto do artista">
+        <h3>Amanda</h3>
+        <p>Trad autoral, fineline, <br> full color, preto&cinza.</p>
+        <a href="https://www.instagram.com/amandaredel/">Ver mais</a>
+      </div>
+      <div class="card">
+        <img src="./assets/artist-photos/pedro.png" alt="Foto do artista">
+        <h3>Pedro</h3>
+        <p>Hachura, fineline, linework.</p>
+        <a href="https://www.instagram.com/ordonhop/">Ver mais</a>
+      </div>
+      <div class="card">
+        <img src="./assets/artist-photos/giu.png" alt="Foto do artista">
+        <h3>Giuilia</h3>
+        <p>Old school, comercial.</p>
+        <a href="https://www.instagram.com/gsm.tattoo_/">Ver mais</a>
+      </div>
+      <div class="card">
+        <img src="./assets/artist-photos/thaine.jpg" alt="Foto do artista">
+        <h3>Thaine</h3>
+        <p>Kpop, full color, finelne.</p>
+        <a href="https://www.instagram.com/thaine_s/">Ver mais</a>
+      </div>
+      <div class="card">
+        <img src="./assets/artist-photos/karou.png" alt="Foto do artista">
+        <h3>Karol</h3>
+        <p>Ornamental, linework, suminagashi, fineline.</p>
+        <a href="https://www.instagram.com/greenkarou/">Ver mais</a>
+      </div>
+      <div class="card">
+        <img src="./assets/artist-photos/bru.png" alt="Foto do artista">
+        <h3>Bru</h3>
+        <p>Administração e RH.</p>
+      </div>
+    </div>
+  </section>
 
-        <section id="galeria">
-            <h1 class="title">Galeria</h1>
-            <div class="gallery-container">
-                <div>
-                    <img src="./assets/gallery-photos/flash-day-aniversario/img1.jpg" alt="">
-                    <img src="./assets/gallery-photos/flash-day-aniversario/img7.jpg" alt="">
-                    <img src="./assets/gallery-photos/flash-day-aniversario/img3.jpg" alt="">
-                    <img src="./assets/gallery-photos/flash-day-aniversario/img4.jpg" alt="">
-                </div>
-                <div>
-                    <img src="./assets/gallery-photos/flash-day-aniversario/img9.jpg" alt="">
-                    <img src="./assets/gallery-photos/flash-day-aniversario/img10.jpg" alt="">
-                    <img src="./assets/gallery-photos/flash-day-aniversario/img6.jpg" alt="">
-                    <img src="./assets/gallery-photos/flash-day-aniversario/img8.jpg" alt="">
-                </div>
-            </div>
-        </section>
+  <section id="galeria">
+    <div class="grid galeria">
+      <img src="./assets/gallery-photos/flash-day-aniversario/img1.jpg" alt="">
+      <img src="./assets/gallery-photos/flash-day-aniversario/img7.jpg" alt="">
+      <img src="./assets/gallery-photos/flash-day-aniversario/img3.jpg" alt="">
 
-        <section id="duvidas">
-            <div>
-                <h1 class="title">Dúvidas Frequentes</h1>
-            <ul>
-                <li onclick="toggleDropdown(this)">
-                    Localização do Estúdio <span class="arrow">▼</span>
-                </li>
+    </div>
+    <div class="grid galeria">
+      <img src="./assets/gallery-photos/flash-day-aniversario/img10.jpg" alt="">
+      <img src="./assets/gallery-photos/flash-day-aniversario/img6.jpg" alt="">
+      <img src="./assets/gallery-photos/flash-day-aniversario/img4.jpg" alt="">
 
-                <div class="dropdown-content">
-                    <div class="local-container">
-                    <p>Rua Augusta, 912 - Cerqueira César, São Paulo - SP, 01304-001 <br>
-                        Atendimento somente em horários agendados.
-                    </p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.433820501476!2d-46.65712662578778!3d-23.55285786127769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5834f69806f1%3A0x8722754a3956e70a!2sR.%20Augusta%2C%20912%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001304-001!5e0!3m2!1sen!2sbr!4v1741870475567!5m2!1sen!2sbr" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
+    </div>
+  </section>
 
+  <section id="duvidas">
+    <h2>Dúvidas Frequentes</h2>
+    <details>
+      <summary>Como agendar uma sessão?</summary>
+      <p>Os agendamentos são feitos com cada artista individualmente.<br>
+        Para mais informações, visite a página de cada um na seção "Equipe."</p>
+    </details>
+    <details>
+      <summary>Informações úteis para orçamento</summary>
+      <p>Para ajudar seu artista a agilizar o atendimento e entender melhor sua ideia, é legal ter em mente as seguintes informações:
+        <br><br>
+        ✨Ideia geral/fotos de referência <br>
+        ✨Tamanho em centímetros <br>
+        ✨Local a ser tatuado <br>
+        ✨Se seria em preto ou colorido <br>
+        ✨Qualquer outra informação que você ache importante 
+        
+        </p>
+    </details>
+    <details>
+      <summary>Localização do Estúdio</summary>
+      <p>Rua Augusta, 912 - Cerqueira César, São Paulo - SP, 01304-001 <br>
+        Atendimento somente em horários agendados.
+    </p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.433820501476!2d-46.65712662578778!3d-23.55285786127769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5834f69806f1%3A0x8722754a3956e70a!2sR.%20Augusta%2C%20912%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001304-001!5e0!3m2!1sen!2sbr!4v1741870475567!5m2!1sen!2sbr" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </details>
+  </section>
 
-                <li onclick="toggleDropdown(this)">
-                    Agendamentos <span class="arrow">▼</span>
-                </li>
+  <footer>
+    <p class="signature">Feito com carinho por Isabela Silva ♡, 2025. </p>
+  </footer>
 
-                <div class="dropdown-content">
-                    <p>Os agendamentos são feitos com cada artista individualmente.<br>
-                    Para mais informações, visite a página de cada um na seção "Equipe."</p>
-                </div>
-
-                <li onclick="toggleDropdown(this)"
-                >Informações úteis para orçamento <span class="arrow">▼</span>
-                </li>
-
-                <div class="dropdown-content">
-                    <p>Para ajudar seu artista a agilizar o atendimento e entender melhor sua ideia, é legal ter em mente as seguintes informações:
-                        <br><br>
-                        ✨Ideia geral/fotos de referência <br>
-                        ✨Tamanho em centímetros <br>
-                        ✨Local a ser tatuado <br>
-                        ✨Se seria em preto ou colorido <br>
-                        ✨Qualquer outra informação que você ache importante 
-                        
-                        </p>
-                </div>
-
-                <li onclick="toggleDropdown(this)"
-                >Nossas redes sociais <span class="arrow">▼</span>
-                </li>
-
-                <div class="dropdown-content">
-                    <ul class ="social-links">
-                        <li><a href="https://www.instagram.com/takeiteasytattoo/">Instagram</a></li>
-                    </ul>
-                </div>
-            </li>
-            </ul>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <p class="signature">Feito com carinho por Isabela Silva ♡, 2025. </p>
-    </footer>
+       <!-- Ícone do Instagram -->
+       <a href="https://www.instagram.com" target="_blank" class="instagram-icon">
+        <img src="../front-end/assets/icon-instagram.png" class="fab fa-instagram">
+        </a>
 
 
-    <script src="/front-end/script.js"></script>
+
+<script src="./script.js"></script>
 
 
 </body>

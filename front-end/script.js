@@ -1,3 +1,4 @@
+
 document.getElementById("anamnese").addEventListener("submit", async function(event) {
     event.preventDefault();
     console.log("Formulário foi submetido");
