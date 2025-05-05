@@ -1,5 +1,8 @@
 # Take It Easy Website 
 
+![image](https://github.com/user-attachments/assets/51297de3-03ce-4685-b27e-b33ab7b27aee)
+
+
 ## 🌟 O Site
 O projeto consiste em uma landing page que apresenta o estúdio de tatuagem Take It Easy. O objetivo é que os clientes tenham mais informações sobre o estúdio em um só lugar. 
 
