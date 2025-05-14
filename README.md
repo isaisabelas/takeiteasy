@@ -3,10 +3,11 @@
 ![image](https://github.com/user-attachments/assets/51297de3-03ce-4685-b27e-b33ab7b27aee)
 
 
-## 🌟 O Site
+## 🌟 [O Site](https://takeiteasy-three.vercel.app)
 O projeto consiste em uma landing page que apresenta o estúdio de tatuagem Take It Easy. O objetivo é que os clientes tenham mais informações sobre o estúdio em um só lugar. 
 
-## 📝 Ficha de Anamnese
+## 📝 [Ficha de Anamnese](https://takeiteasy-three.vercel.app/anamnese.html)
+
 ![image](https://github.com/user-attachments/assets/e560f308-550b-4936-a489-a3bb4322b0ef)
 ![image](https://github.com/user-attachments/assets/4eae1d1a-6245-4f70-8f29-8ff417b60180)
 
